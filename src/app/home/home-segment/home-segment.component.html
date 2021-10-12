@@ -1,0 +1,181 @@
+<!-- <ion-header [translucent]="true"> -->
+
+
+    <ion-segment 
+    value="all" 
+    color="favorite" 
+    scrollable="false"
+    [(ngModel)]="segmentModel" 
+    (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="today">
+        <ion-label>Today Release</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="new">
+        <ion-label>New Release</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="tranding">
+        <ion-label>Tranding</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+    
+
+
+<!-- <ion-content [fullscreen]="true" class="ion-padding"> -->
+
+<iom-grid class="ion-no-padding">
+  <ion-slides [options]="cube">
+        <ion-slide *ngIf="segmentModel === 'today'">
+          <ion-row (click)="productlist()">
+            <ion-col size="6">
+            <ion-card>
+                <img src="assets/images/shirt-1.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card>
+                <img src="assets/images/shirt-2.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide *ngIf="segmentModel === 'today'">
+          <ion-row>
+            <ion-col size="6">
+              <ion-card>
+                <img src="assets/images/shirt-3.jpeg"/>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card>
+                <img src="assets/images/shirt-4.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide *ngIf="segmentModel === 'today'">
+       <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/shirt-5.jpeg"/>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/shirt-6.jpeg"/>
+          </ion-card>
+        </ion-col>
+       </ion-row>
+        </ion-slide>
+  </ion-slides>
+  
+  <ion-slides [options]="cube">
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'new'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/dress-1.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/dress-2.jpeg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'new'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/dress-3.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/dress-4.jpeg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'new'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/dress-5.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/dress-6.jpg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'new'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/dress-7.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/dress-8.jpeg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+    
+  <ion-slides [options]="cube">
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'tranding'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/smartwatch-1.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/smartwatch-2.png"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'tranding'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/smartwatch-3.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/smartwatch-4.jpeg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row *ngIf="segmentModel === 'tranding'">
+        <ion-col size="6">
+        <ion-card>
+            <img src="assets/images/smartwatch-5.jpeg"/>
+        </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <img src="assets/images/smartwatch-6.jpeg"/>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+</iom-grid>
+
+ 
+<!-- </ion-content> -->

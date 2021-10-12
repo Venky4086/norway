@@ -1,0 +1,193 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" class="header-card">
+        <ion-card>
+          <ion-button routerLink="/settings">
+            <ion-icon name="chevron-back-outline" color="favorite"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-buttons>
+      <ion-title color="" class="ion-text-center fs-18 fw-700">My Address</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid class="ion-grid">
+      <ion-row>
+        <ion-col size="12">
+         <ion-card class="mg-0 pd-15 d-flex-align-center" (click)="addaddress()">
+          <ion-icon name="add-outline" class="fs-22 pdr-5" color="primary"></ion-icon>
+           <ion-text class="fs-15 fw-700" color="primary">
+             Add a new addess
+           </ion-text>
+         </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="newaddress" class="mgt-5">
+        <ion-col>
+          <form [formGroup]="Address">
+            <ion-card class="mg-0 mgb-15" formArrayName="arr"
+              *ngFor="let a of Address.get('arr')['controls']; let i = index">
+             <ion-row>
+              <ion-col size="12">
+                <ion-item class="ion-input ion-no-padding" lines="none">
+                  <ion-input type="text" placeholder="Enter Full name (Required)*" class="ion-input-border" formControlName="firstname">
+                  </ion-input>
+                </ion-item> 
+                <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('firstname').errors?.required">Full Name
+                  is required</span>
+              </ion-col>
+             </ion-row>
+             <ion-row>
+              <ion-col size="12">
+                <ion-item class="ion-input ion-no-padding" lines="none">
+                  <ion-input type="number" placeholder="Enter mobile number (Required)*" class="ion-input-border" fromControName="phone">
+                  </ion-input>
+                </ion-item>
+                <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('phone').errors?.required">Phone Number
+                  is required</span>
+              </ion-col>
+             </ion-row>
+             <ion-row (click)="Alternateph()">
+               <ion-col size="12" class="d-flex-align-center">
+                <ion-icon name="add-outline" class="fs-22 pdr-5" color="primary"></ion-icon>
+                <ion-text class="fs-15 fw-700" color="primary">
+                  Add Alternate Phone Number
+                </ion-text>
+               </ion-col>
+             </ion-row>
+             <ion-row *ngIf="alphoneinput">
+              <ion-col size="12">
+                <ion-item class="ion-input ion-no-padding" lines="none">
+                  <ion-input type="number" placeholder="Enter mobile number" class="ion-input-border">
+                  </ion-input>
+                </ion-item>
+                <!-- <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('city').errors?.required">City
+                  is required</span> -->
+              </ion-col>
+             </ion-row>
+              <ion-row [formGroupName]="i">
+                <ion-col size="6">
+                  <ion-item class="ion-input ion-no-padding" lines="none">
+                    <ion-input type="text" placeholder="Enter city" class="ion-input-border" formControlName="city">
+                    </ion-input>
+                  </ion-item>
+                  <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('city').errors?.required">City
+                    is required</span>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item ion-no-padding class="ion-input" lines="none">
+                    <ion-select placeholder="Enter State" class="ion-input-border" formControlName="state">
+                      <ion-select-option>Andhra Pradesh</ion-select-option>
+                      <ion-select-option>Arunachal Pradesh</ion-select-option>
+                      <ion-select-option>Assam</ion-select-option>
+                      <ion-select-option>Bihar</ion-select-option>
+                      <ion-selct-option>Chhattisgarh</ion-selct-option>
+                      <ion-selct-option>Goa</ion-selct-option>
+                      <ion-select-option>Gujarat</ion-select-option>
+                      <ion-select-option value="Haryana">Haryana</ion-select-option>
+                      <ion-select-option value="Himachal Pradesh">Himachal Pradesh</ion-select-option>
+                      <ion-select-option value="Jharkhand">Jharkhand</ion-select-option>
+                      <ion-select-option value="Karnataka">Karnataka</ion-select-option>
+                      <ion-select-option value="Kerala">Kerala</ion-select-option>
+                      <ion-select-option value="Madhya Pradesh">Madhya Pradesh</ion-select-option>
+                      <ion-select-option value="Maharashtra">Maharashtra</ion-select-option>
+                      <ion-select-option value="Manipur">Manipur</ion-select-option>
+                      <ion-select-option value="Meghalaya">Meghalaya</ion-select-option>
+                      <ion-select-option value="Mizoram">Mizoram</ion-select-option>
+                      <ion-select-option value="Nagaland">Nagaland</ion-select-option>
+                      <ion-select-option value="Odisha">Odisha</ion-select-option>
+                      <ion-select-option value="Punjab">Punjab</ion-select-option>
+                      <ion-select-option value="Rajasthan">Rajasthan</ion-select-option>
+                      <ion-select-option value="Sikkim">Sikkim</ion-select-option>
+                      <ion-select-option value="Tamil Nadu">Tamil Nadu</ion-select-option>
+                      <ion-select-option value="Telangana">Telangana</ion-select-option>
+                      <ion-select-option value="Tripura">Tripura</ion-select-option>
+                      <ion-select-option value="Uttar Pradesh">Uttar Pradesh</ion-select-option>
+                      <ion-select-option value="Uttarakhand">Uttarakhand</ion-select-option>
+                      <ion-select-option value="West Bengal">West Bengal</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <span class="fs-13 text-danger"
+                    *ngIf="submitted && arr.controls[i].get('state').errors?.required">State is required</span>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item ion-no-padding class="ion-input" lines="none">
+                    <ion-input type="text" placeholder="Enter street" class="ion-input-border" formControlName="street">
+                    </ion-input>
+                  </ion-item>
+                  <span class="fs-13 text-danger"
+                    *ngIf="submitted && arr.controls[i].get('street').errors?.required">street is required</span>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item ion-no-padding class="ion-input" lines="none">
+                    <ion-input type="number" placeholder="Enter pincode" class="ion-input-border"
+                      formControlName="pincode"></ion-input>
+                  </ion-item>
+                  <span class="fs-13 text-danger"
+                    *ngIf="submitted && arr.controls[i].get('pincode').errors?.pattern">Pincode should be of 6
+                    digits</span>
+                  <span class="fs-13 text-danger"
+                    *ngIf="submitted && arr.controls[i].get('pincode').errors?.required">pincode is required</span>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-item class="ion-input ion-no-padding" lines="none">
+                    <ion-input type="text" placeholder="House No., Building Name (Required)*" class="ion-input-border" formControlName="houseno">
+                    </ion-input>
+                  </ion-item> 
+                  <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('houseno').errors?.required">House No
+                    is required</span>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-item class="ion-input ion-no-padding" lines="none">
+                    <ion-input type="text" placeholder="Road name, Area, Colony (Required)*" class="ion-input-border" formControlName="area">
+                    </ion-input>
+                  </ion-item> 
+                  <span class="fs-13 text-danger" *ngIf="submitted && arr.controls[i].get('area').errors?.required"> Road name, Area, Colony
+                    is required</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12" class="d-flex-center">
+                  <ion-button color="danger" (click)="removeItem(i)">
+                    Remove
+                  </ion-button>
+                  <ion-button color="success" class="mgr-5 mgl-5" (click)="addItem()">
+                    ADD More
+                  </ion-button>
+                  <ion-button color="primary" (click)="onSubmit()">
+                    Save
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </form>
+        </ion-col>
+      </ion-row>
+
+
+   <!-- saved address -->
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-text color="medium" class="fs-12 pdr-5">
+            1
+          </ion-text>
+          <ion-text color="medium" class="fs-12">
+            SAVED ADDRESS
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card class="mg-0 pd-15">
+             <h1 class="fs-15 text-dark">Analog It Solution</h1>
+             <p class="mgb-0">1-205 Ntr nagar, sathyavedu,Ntr nagar(near Rtc depo),sathyavedu,Andhra Pradesh - 517588</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+ 
+    </ion-grid>
+  </ion-content>
+</ion-app>

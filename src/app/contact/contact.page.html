@@ -1,0 +1,55 @@
+<ion-app>
+  <!-- <ion-header> -->
+    <ion-toolbar>
+      <ion-buttons slot="start" class="header-icons mgl-0">
+          <!-- <ion-icon name="menu"></ion-icon> -->
+          <ion-card class="pd-5 bdr-20 mg-0">
+           <ion-menu-button color="favorite" shape="round"></ion-menu-button>
+          </ion-card>
+      </ion-buttons>
+      <ion-title color="" class="ion-text-center fs-18 fw-700">Contact</ion-title>
+      <!-- <ion-searchbar animated></ion-searchbar> -->
+      <ion-buttons slot="end" class="header-card">
+          <ion-card>
+            <ion-button routerLink="/addcart">
+                <ion-icon name="cart-outline" color="favorite"></ion-icon>
+              </ion-button>
+            </ion-card>
+          <!-- <ion-icon name="heart" class="fs-25 mgl-10 mgr-10"></ion-icon>
+          <ion-button routerLink="/addcart"><ion-icon name="cart"></ion-icon></ion-button> -->
+      </ion-buttons>
+  </ion-toolbar>
+  <!-- </ion-header> -->
+
+  <ion-content>
+    <ion-item lines="none" *ngFor="let conv of conversation; let i = index;" class="animate mgt-15">
+      <ion-row class="full">
+        <ion-col size="2" [ngClass]="{'left' : !conv.sender, 'right': conv.sender}"><img [src]="conv.image"
+            class="avatar" [ngClass]="{'left' : !conv.sender, 'right': conv.sender}"></ion-col>
+        <ion-col size="10" class="card" [ngClass]="{'left' : !conv.sender, 'right': conv.sender}">
+          <ion-text>
+            <h5 class="text mg-0">{{conv.text}}</h5>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <!-- <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+      <ion-infinite-scroll-content class="singup-scroll">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+  </ion-content>
+  <ion-footer>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="9">
+        <ion-input class="input restrict" type="text" placeholder="Type a message" [(ngModel)]="input"></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button shape="round" class="restrict" color="primary" expand="block" (click)="send()">
+          <ion-icon class="white" name="send"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+
+</ion-app>

@@ -1,0 +1,43 @@
+<!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-buttons slot="start" class="header-card">
+      <ion-card>
+       <ion-button routerLink="/home">
+         <ion-icon name="chevron-back-outline" color="favorite"></ion-icon>
+       </ion-button>
+      </ion-card>
+    </ion-buttons>
+     <ion-title class="ion-text-center fs-18 fw-700">Faqs</ion-title>
+     <ion-buttons slot="end" class="header-card">
+      <ion-card>
+        <ion-button routerLink="/addcart" class="mg-0">
+          <ion-icon name="cart" color="favorite"></ion-icon>
+        </ion-button>
+      </ion-card>
+    </ion-buttons>
+  </ion-toolbar>
+<!-- </ion-header> -->
+
+<ion-content>
+<ion-grid class="ion-grid">
+ <ion-row>
+  <ion-col size="12">
+    <ion-card *ngFor="let question of questions; let i = index"  (click)="open(i, question)" class="ion-card">
+      <ion-row>
+      <ion-col size="10" class="ion-align-items-center d-flex">
+        <ion-text class="fs-15">
+          <h5 class="title mgb-0 fs-15">{{question}}</h5>
+        </ion-text>
+      </ion-col>
+      <ion-col size="2" class="ion-align-items-center justify-content-end d-flex">
+        <!-- <ion-button fill="outline" color="medium" class="mg-0 ion-button"> -->
+          <ion-icon name="chevron-forward-outline" color="favorite" class="ion-icon"></ion-icon>
+        <!-- </ion-button> -->
+      </ion-col>
+    </ion-row>
+    </ion-card>
+  </ion-col>
+ </ion-row>
+ 
+</ion-grid>
+</ion-content>

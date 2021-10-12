@@ -1,0 +1,75 @@
+<ion-app>
+  <!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-buttons class="header-icons">
+      <ion-button fill="clear" routerLink="/welcome">
+        <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- </ion-header> -->
+  <ion-content>
+    <div class="d-flex justify-content-center mt-4 image">
+      <img src="assets/images/phone-1.png" alt="otp">
+    </div>
+    <div class="text-center mt-4">
+      <h2 class="fs-18 fw-700">OTP Verification</h2>
+      <p class="fs-13 mg-auto">We will send you an <ion-text class="fs-13 fw-700 pdr-5 pdl-5" color="dark">One Time
+          Password</ion-text>on this mobile number</p>
+    </div>
+    <div id="recaptcha-container" style="display: none;"></div>
+    <form [formGroup]="mobileOTP" *ngIf="mobileno">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="10" class="ion-no-padding">
+            <!-- <ion-item class="ion-input">
+              <ion-label position="floating" class="fs-14">Mobile Number</ion-label>
+              <ion-input class="ion-input-floating" type="number" formControlName="mobile"></ion-input>
+            </ion-item> -->
+            <div class="ion-input ion-input-border d-flex">
+              <ion-select class="pdl-10" formControlName="country_code">
+                <ion-select-option value="+91">+91</ion-select-option>
+                <ion-select-option value="+92">+92</ion-select-option>
+              </ion-select>          
+              <ion-input type="number" placeholder="Enter Mobile Number"  formControlName="mobile"></ion-input>
+            </div>
+            <div class="text-danger fs-13" *ngIf="submitted && f.country_code.errors?.required">Country code is required</div>
+            <span class="text-danger fs-13" *ngIf="submitted && f.mobile.errors?.required">Mobile Number is required</span>
+            <span class="text-danger fs-13" *ngIf="submitted && f.mobile.errors?.pattern">Mobile Number should be of 10 digits</span>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center mgt-15">
+          <ion-col size="8">
+            <ion-button color="favorite" type="submit" expand="block" (click)="getotp()">
+              GET OTP
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <form [formGroup]="OTPno" *ngIf="otpno">
+      <ion-grid>
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="10" class="ion-no-padding">
+                <!-- <ion-item class="ion-input">
+                  <ion-label position="floating" class="fs-14">Mobile Number</ion-label>
+                  <ion-input class="ion-input-floating" type="number" formControlName="mobile"></ion-input>
+                </ion-item> -->
+                <ion-item class="ion-input" lines="none">
+                  <ion-input type="tel" placeholder="Enter OTP Number" class="ion-input-border" formControlName="otp"></ion-input>
+                </ion-item>
+                <span class="text-danger fs-13" *ngIf="submitted && o.otp.errors?.required">OTP Number is required</span>
+                <!-- <span class="text-danger fs-13" *ngIf="submitted && f.mobile.errors?.pattern">Mobile Number should be of 10 digits</span> -->
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-justify-content-center mgt-15">
+              <ion-col size="8">
+                <ion-button color="favorite" type="submit" expand="block" (click)="verifyOTP()">
+                  VERIFY & PROCEED
+                </ion-button>
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="header-icons mgl-0">
+        <!-- <ion-icon name="menu"></ion-icon> -->
+        <ion-card class="pd-5 bdr-20 mg-0">
+         <ion-menu-button color="favorite" shape="round"></ion-menu-button>
+        </ion-card>
+    </ion-buttons>
+    <ion-title color="" class="ion-text-center fs-18 fw-700">Settings</ion-title>
+    <!-- <ion-searchbar animated></ion-searchbar> -->
+    <ion-buttons slot="end" class="header-card">
+        <ion-card>
+          <ion-button routerLink="/addcart">
+              <ion-icon name="cart-outline" color="favorite"></ion-icon>
+            </ion-button>
+          </ion-card>
+        <!-- <ion-icon name="heart" class="fs-25 mgl-10 mgr-10"></ion-icon>
+        <ion-button routerLink="/addcart"><ion-icon name="cart"></ion-icon></ion-button> -->
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid class="ion-grid">
+  <ion-row>
+    <ion-col size="12">
+     <ion-card class="mg-0 pd-15" (click)="address()">
+       <ion-text class="fs-15 fw-700">
+        Manage Address
+       </ion-text>
+     </ion-card>
+    </ion-col>
+  </ion-row>
+ <ion-row>
+   <ion-col size="12">
+    <ion-card class="mg-0 pd-15">
+      <ion-text class="fs-15 fw-700">
+        Notifications
+      </ion-text>
+    </ion-card>
+   </ion-col>
+ </ion-row>
+ <ion-row>
+  <ion-col size="12">
+   <ion-card class="mg-0 pd-15">
+     <ion-text class="fs-15 fw-700">
+       Email Settings
+     </ion-text>
+   </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+   <ion-card class="mg-0 pd-15">
+     <ion-text class="fs-15 fw-700">
+       Currancy Settings
+     </ion-text>
+   </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+   <ion-card class="mg-0 pd-15" (click)="privacy()">
+     <ion-text class="fs-15 fw-700">
+       Privacy policy
+     </ion-text>
+   </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+   <ion-card class="mg-0 pd-15" (click)="logout()">
+     <ion-text class="fs-15 fw-700">
+       Logout
+     </ion-text>
+   </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+<!-- Modal -->

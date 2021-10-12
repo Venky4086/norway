@@ -1,0 +1,83 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>singup</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-app>
+  <ion-toolbar class="bg-gray">
+    <ion-buttons class="header-icons">
+      <ion-button fill="clear" routerLink="/singin">
+        <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-content class="bg-gray">
+    <div>
+      <h3 class="text-center mt-2 fw-800 fs-30">Sing Up</h3>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <img src="assets/icon/favicon.png" alt="" width="100">
+    </div>
+    <div class="mgt-20 mgb-15">
+      <p class="fs-13 text-center mgb-0">Please enter your details</p>
+    </div>
+    <form [formGroup]="SingUp">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="10" class="ion-no-padding">
+            <ion-item class="ion-input" lines="none">
+               <!-- <ion-label position="floating" class="fs-14">User Name</ion-label> -->
+               <ion-input class="ion-input-border" [(ngModel)]="name"  type="text" placeholder="Enter Username" formControlName="name"></ion-input>
+            </ion-item>
+            <span class="text-danger fs-13" *ngIf="submitted && f.name.errors?.required">
+              Name is required
+            </span>
+          </ion-col>
+          <ion-col size="10" class="col-start-no-padding">
+            <ion-item class="ion-input" lines="none">
+               <!-- <ion-label position="floating" class="fs-14">Email</ion-label> -->
+               <ion-input class="ion-input-border" type="email" [(ngModel)]="email" placeholder="Enter Email" formControlName="email"></ion-input>
+            </ion-item>
+            <span class="text-danger fs-13" *ngIf="submitted && f.email.errors?.required">
+              Email is required
+            </span>
+            <span class="text-danger fs-13" *ngIf="submitted && f.email.errors?.email">Email must be a valid email address</span>
+          </ion-col>
+          <!-- <ion-col size="10" class="ion-no-padding">
+            <ion-item class="ion-input">
+               <ion-label position="floating" class="fs-14">Password</ion-label>
+               <ion-input class="ion-input-floating" type="password" formControlName="psw"></ion-input>
+            </ion-item>
+              <div *ngIf="submitted && f.psw.errors?.required" class="text-danger fs-13">Password is required</div>
+          </ion-col> -->
+          <ion-col size="10" class="ion-no-padding">
+            <ion-item class="ion-input" lines="none">
+               <!-- <ion-label position="floating" class="fs-14">Address</ion-label> -->
+               <ion-input class="ion-input-border" type="text" placeholder="Enter Address" [(ngModel)]="address"  formControlName="address"></ion-input>
+            </ion-item>
+            <span class="text-danger fs-13" *ngIf="submitted && f.address.errors?.required">
+              Address is required
+            </span>
+          </ion-col>
+            <ion-col size="8" class="mgt-15">
+              <ion-button color="favorite" type="submit" (click)="singup()" expand="block">
+                Submit
+              </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- <div class="text-center">
+        <ion-text class="fs-14">Forget password ?</ion-text>
+      </div> -->
+    </form>
+    <!-- <div class="text-center">
+      <ion-text class="fs-14">I have an already account is there ? <ion-text routerLink="/login" color="primary">SingIn</ion-text></ion-text>
+    </div> -->
+
+
+    <!-- <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+      <ion-infinite-scroll-content class="singup-scroll">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+  </ion-content>
+</ion-app>

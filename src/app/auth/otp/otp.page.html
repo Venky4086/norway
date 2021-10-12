@@ -1,0 +1,70 @@
+<ion-app>
+  <!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-buttons class="header-icons">
+      <ion-button fill="clear" routerLink="/singin">
+        <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- </ion-header> -->
+  <ion-content>
+    <div class="d-flex justify-content-center mt-4">
+      <img src="assets/images/otpnumber.png" alt="otp">
+    </div>
+    <div class="text-center mt-4">
+      <h2 class="fs-18 fw-700">OTP Verification</h2>
+      <p class="fs-13">Enter the OTP send to<ion-text class="fs-13 fw-700 pdr-5 pdl-5" color="dark">
+          +91-8802768985</ion-text>
+      </p>
+    </div>
+    <div id="recaptcha-container" class="d-none"></div>
+    <form>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" maxlength="1" tabindex="1" (keyup)="moveFocus(b)" type="tel" #a></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" type="tel" maxlength="1" tabindex="2" (keyup)="moveFocus(c)" #b ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" type="tel" maxlength="1" tabindex="3" (keyup)="moveFocus(d)" #c></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" type="tel"  minlength="1" maxlength="1"  tabindex="4" #d (keyup)="moveFocus(e)"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" type="tel"  minlength="1" maxlength="1"  tabindex="4" #e (keyup)="moveFocus(f)"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item class="ion-input" lines="none">
+              <ion-input class="otp-ion-input" type="tel"  minlength="1" maxlength="1"  tabindex="4" #f (keyup)="moveFocus(d)"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center mgt-15">
+          <ion-col size="12" class="ion-align-center">
+            <p class="fs-13 text-center mgb-5">Dont recive the OTP ? <a
+                class="text-danger fs-13 fw-700 text-decoration-none">RESEND OTP</a></p>
+          </ion-col>
+          <ion-col size="8">
+            <ion-button color="favorite"  type="submit" expand="block" (click)="verifyOTP(a.value,b.value,c.value,d.value,e.value,f.value)">
+              VERIFY & PROCEED
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+</ion-app>

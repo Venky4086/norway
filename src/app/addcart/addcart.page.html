@@ -1,0 +1,341 @@
+<ion-app>
+  <!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-buttons slot="start" class="header-card">
+      <ion-card>
+       <ion-button routerLink="/productdetails">
+         <ion-icon name="chevron-back-outline" color="favorite"></ion-icon>
+       </ion-button>
+      </ion-card>
+    </ion-buttons>
+     <ion-title class="ion-text-center fs-18 fw-700">My Cart</ion-title>
+  </ion-toolbar>
+  <!-- </ion-header> -->
+
+  <ion-content>
+    <ion-grid class="ion-grid">
+      <ion-row>
+        <ion-col size="12" class="pdt-0 pdb-10">
+          <ion-item>
+            <ion-text class="fs-15 fw-700">3 Items</ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="mycart">
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div>
+              <img src="assets/images/bicycle-2.jpeg" />
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">99</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="mycart">
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger" (click)="Remove()"><a class="text-decorattion-none">Remove</a></ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div>
+              <img src="assets/images/shirt-2.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">200</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/smartwatch-1.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+       <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/smartwatch-2.png"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/smartwatch-3.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/shirt-4.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/shirt-3.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="ion-card">
+            <div class="">
+              <img src="assets/images/smartwatch-3.jpeg"/>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-13">LEADER Scout 26T SEA Blue BLACK for Ride 26 T Mountain Cycle (Single Speed, Blue)
+          </ion-text>
+          <div class="d-flex align-items-center">
+            <ion-chip class="mg-0">
+              <ion-text class="fs-15 fw-700 pr-1" color="primary">$</ion-text>
+              <ion-label class="fs-15 fw-700" color="primary">350</ion-label>
+            </ion-chip>
+            <div class="mgl-auto">
+              <ion-select interface="popover" value="1" class="bdr-15 brd-1 pdl-15 pdr-15 pdt-5 pdb-5">
+                <ion-select-option value="1" slected>1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="6">6</ion-select-option>
+                <ion-select-option value="7">7</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-text class="fs-15" color="danger">Remove</ion-text>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text class="fs-15" color="danger">Save for later</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" class="d-flex-center">
+          <ion-button color="favorite" expand="black" routerLink="/addcart">
+            <ion-text class="txt-white">Buy Now</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+      <ion-infinite-scroll-content class="singup-scroll">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+  </ion-content>
+</ion-app>

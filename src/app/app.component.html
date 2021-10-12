@@ -1,0 +1,97 @@
+<ion-app>
+  <ion-menu side="start" type="push" contentId="main">
+    <ion-header>
+      <ion-toolbar class="pdt-10 pdb-10">
+        <ion-row class="ion-align-items-start">
+          <ion-col size="3">
+           <div class="camera">
+            <div class="img">
+              <ion-avatar>
+                <img src="assets/images/ntr.jpg" (click)="selectImage()">
+              </ion-avatar>
+            </div>
+            <div>
+              <ion-icon name="camera-outline" class="text-white fs-20 pd-5"></ion-icon>
+              <!-- <ion-input type="file"></ion-input> -->
+            </div>
+           </div>
+          </ion-col>
+          <ion-col size="9" class="pdl-10">
+            <h1 class="fs-15 mgb-7 fw-700  mgt-0 text-light text-ellipses text-c">{{name}}</h1>
+            <h6 class="fs-13 mgt-7 mgb-10">{{email}}</h6>
+            <div class="d-flex align-item-center">
+              <h6 class="fs-13 mgb-0"><a  class="text-decoration-none text-primary" data-toggle="modal" data-target="#exampleModalLong">Edit
+                  Details</a></h6>
+              <h6 class="fs-13 mgb-0 mgl-auto"><a routerLink="" class="text-decoration-none text-primary">Verify
+                  Email</a></h6>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+        <ion-item detail="false" lines="full" [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-icon slot="start" [name]="p.icon" class="fs-20"></ion-icon>
+          <ion-label class="fs-15">
+            {{p.title}}
+            <ion-badge *ngIf="p.title == 'Shopping Cart'" color="danger" class="label-subtext">6</ion-badge>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages1" class="ion-height">
+        <ion-item detail="false" lines="none" [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-icon slot="start" class="fs-15"></ion-icon>
+          <ion-label class="fs-13">
+            {{p.title}}
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
+
+<!-- profile edit modla -->
+
+<div class="modal fade" data-backdrop="static" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-light text-center mgt-0">Profile Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="text-light">&times;</span>
+        </button>
+      </div>
+      <form>
+      <div class="modal-body pd-10">
+          <ion-grid class="ion-no-padding">
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="10" class="ion-no-padding">
+                <ion-item class="ion-input" lines="none">
+                   <ion-input class="ion-input-border" type="text" value="{{name}}" placeholder="Enter Username" name="username" #username></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="10" class="col-start-no-padding">
+                <ion-item class="ion-input" lines="none">
+                   <ion-input class="ion-input-border" type="email" value="{{email}}" placeholder="Enter Email" name="useremail" #useremail></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="10" class="ion-no-padding">
+                <ion-item class="ion-input" lines="none">
+                   <ion-input class="ion-input-border" type="text" value="{{address}}" placeholder="Enter Address" name="useraddress" #useraddress></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+      <div class="modal-footer">
+       <ion-buttons>
+        <ion-button type="button"  fill="solid" color="favorite" data-dismiss="modal">Close</ion-button>
+        <ion-button type="button" color="primary" fill="solid" (click)="edit(username.value,username.value,useraddress.value)">Edit</ion-button>
+       </ion-buttons>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

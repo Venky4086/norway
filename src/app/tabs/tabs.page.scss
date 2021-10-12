@@ -1,0 +1,23 @@
+ion-tab-bar{
+    width: 92% !important;
+    border-radius: 15px !important;
+    margin: 0 auto;
+    ion-tab-button{
+        border-radius: 50%;
+        width: 92%;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 0.5rem !important;
+    }
+    .tab-selected{
+        color: var(--ion-color-favorite);
+        border-radius: 50%;
+        width: 92%;
+        // box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 0.5rem !important;
+        // box-shadow: 1px 1px 10px 1px #000000;
+        ion-label{
+            display: block !important;
+        }
+    }
+}
+// .tab-selected{
+//     color: var(--ion-color-favorite);
+// }

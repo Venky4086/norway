@@ -1,0 +1,22 @@
+ion-col {
+    padding-bottom:5px !important;
+ }
+ .range-knob-handle .range-knob-b .range-knob-max{
+     right: 20% !important;
+ }
+ .range-knob-handle .range-knob-b{
+     right: 20% !important;
+ }
+ .ion-range{
+     transform: rotate(90deg);
+     ion-range{
+         width: 70px !important;
+     }
+ }
+ 
+ .border-bottom{
+     border-bottom: 1px solid var(--ion-color-medium) !important;
+ }
+ h1{
+    margin-top: 0px !important;
+}

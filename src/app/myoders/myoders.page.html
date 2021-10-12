@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="header-card">
+      <ion-card>
+       <ion-button routerLink="/home">
+         <ion-icon name="chevron-back-outline" color="favorite"></ion-icon>
+       </ion-button>
+      </ion-card>
+    </ion-buttons>
+     <ion-title class="ion-text-center fs-18 fw-700">My Orders</ion-title>
+     <ion-buttons slot="end" class="header-card">
+      <ion-card>
+        <ion-button routerLink="/addcart">
+            <ion-icon name="cart-outline" color="favorite"></ion-icon>
+          </ion-button>
+      </ion-card>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-grid class="ion-grid">
+    <ion-card class="mg-5 pd-10">
+      <ion-row (click)="orderdetails()">
+        <ion-col siz="10">
+          <h1 class="fs-15">
+           Apple iPhone 12 (Blue, 128 GB)
+           Apple iPhone 12 (Blue, 128 GB)  Apple iPhone 12 (Blue, 128 GB)
+          </h1>
+          <!-- <p class="mgb-5"><ion-chip color="favorite" class="mg-0">₹ 84,900</ion-chip></p> -->
+          <div class="d-flex align-items-center">  
+           <ion-icon name="ellipse" color="danger" class="pdr-5"></ion-icon><ion-text color="" class="fs-15">Cancelled</ion-text>
+          </div>
+          <!-- <div class="d-flex align-items-center">  
+           <ion-icon name="ellipse" color="success" class="pdr-5"></ion-icon><ion-text color="" class="fs-15">Conform</ion-text>
+          </div>
+          <div class="d-flex align-items-center">  
+           <ion-icon name="ellipse" color="primary" class="pdr-5"></ion-icon><ion-text color="" class="fs-15">Pending</ion-text>
+          </div>
+          <div class="d-flex align-items-center">  
+           <ion-icon name="ellipse" color="warning" class="pdr-5"></ion-icon><ion-text color="" class="fs-15">Delivered</ion-text>
+          </div> -->
+        </ion-col>
+        <ion-col size="2">
+          <div style="width: 50px;">
+            <img src="assets/images/apple-1.jpeg" alt="">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+     <ion-row>
+       <ion-col>
+         <ion-card class="mg-0 pd-15">
+           <ion-text class="fs-15 d-flex-center" color="dark">
+             No more orders
+           </ion-text>
+         </ion-card>
+       </ion-col>
+     </ion-row>
+ </ion-grid>
+</ion-content>

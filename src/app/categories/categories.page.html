@@ -1,0 +1,243 @@
+<ion-app>
+  <!-- <ion-header> -->
+      <ion-toolbar color="">
+          <ion-buttons slot="start" class="header-icons">
+              <!-- <ion-icon name="menu" class="fs-25"></ion-icon> -->
+              <ion-card class="pd-5 bdr-20 mg-0">
+                <ion-menu-button color="favorite"></ion-menu-button>
+              </ion-card>
+          </ion-buttons>
+          <ion-title color="" class="ion-text-center">Categories</ion-title>
+          <!-- <ion-searchbar animated></ion-searchbar> -->
+          <ion-buttons slot="end" class="header-card">
+           <ion-card>
+            <ion-button routerLink="/heart">
+                <ion-icon name="heart" color="favorite"></ion-icon>
+             </ion-button>
+           </ion-card>
+             <!-- <ion-button routerLink="/addcart">
+                <ion-icon name="cart" class="fs-25"></ion-icon>
+             </ion-button> -->
+          </ion-buttons>
+      </ion-toolbar>
+  <!-- </ion-header>  -->
+<ion-content>
+  <ion-grid>
+    <ion-row>
+    <ion-col size="12">
+        <ion-segment 
+        value="all" 
+        color="favorite" 
+        scrollable="false"
+        [(ngModel)]="segmentModel">
+      
+          <ion-segment-button value="Men">
+            <ion-label>Men</ion-label>
+          </ion-segment-button>
+      
+          <ion-segment-button value="Women">
+            <ion-label>Women</ion-label>
+          </ion-segment-button>
+      
+          <ion-segment-button value="kids">
+            <ion-label>kids</ion-label>
+          </ion-segment-button>
+      
+        </ion-segment>
+    </ion-col>
+    <ion-col size="12">
+      <ion-slides>
+        <ion-slide *ngIf="segmentModel === 'Men'">
+          <ion-row (click)="productlist()">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/shirt-1.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card  class="ion-card">
+                <img src="assets/images/shirt-2.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide *ngIf="segmentModel === 'Men'">
+          <ion-row>
+            <ion-col size="6">
+              <ion-card  class="ion-card">
+                <img src="assets/images/shirt-3.jpeg"/>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card  class="ion-card">
+                <img src="assets/images/shirt-4.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide *ngIf="segmentModel === 'Men'">
+       <ion-row>
+        <ion-col size="6">
+          <ion-card  class="ion-card">
+            <img src="assets/images/shirt-5.jpeg"/>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card  class="ion-card">
+            <img src="assets/images/shirt-6.jpeg"/>
+          </ion-card>
+        </ion-col>
+       </ion-row>
+        </ion-slide>
+      </ion-slides>
+
+
+      <ion-slides>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'Women'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/dress-1.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/dress-2.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'Women'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/dress-3.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/dress-4.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'Women'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/dress-5.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/dress-6.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'Women'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/dress-7.jpeg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/dress-8.jpeg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+
+
+      <ion-slides>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'kids'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/kidds-1.jpg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/kids-2.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'kids'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/kids-3.jpg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/kids-4.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'kids'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/kids-5.jpg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/kids-6.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'kids'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/kids-7.jpg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/kids-8.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row *ngIf="segmentModel === 'kids'">
+            <ion-col size="6">
+            <ion-card class="ion-card">
+                <img src="assets/images/kids-9.jpg"/>
+            </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <ion-card class="ion-card">
+                <img src="assets/images/kids-10.jpg"/>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+
+
+    </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+ 
+
+</ion-content>
+
+
+
+
+
+
+</ion-app>

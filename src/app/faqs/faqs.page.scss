@@ -1,0 +1,30 @@
+// .menu {
+//     color: white !important;
+// }
+// .card {
+//     padding: 6px;
+//     border-radius: 3px;
+//     border: .3px solid rgb(210, 210, 210);
+//     background-color: white;
+// }
+// .title {
+//     font-size: 15px;
+// }
+.ion-card{
+    width: 100%;
+    margin: 0px !important;
+    margin-bottom: 10px !important;
+    padding: 5px !important;
+}
+.ion-button{
+    width: 35px;
+    height: 35px;
+    padding: 0px !important;
+    border-radius: 50%;
+}
+.ion-icon{
+    font-size: 22px !important;
+    border-radius: 50%;
+    border:1px solid var(--ion-color-medium);
+    padding: 5px;
+}
